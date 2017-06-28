@@ -1,0 +1,15 @@
+<script>
+  function login() {
+    fetch('/Account/Login', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({username: 'admin', password: 'password'})
+    }).then(res => window.location.href = '/')
+  }
+</script>
+
+<button onclick="login()">Log in</button>
